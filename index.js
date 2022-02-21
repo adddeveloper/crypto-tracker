@@ -100,7 +100,7 @@ function again(){
                 '<p class="p-1 titlespara">'+
                     '<span style="color:black;"> <b>$</b>'+
                         changevolume+
-                    '% </span>'+
+                    '</span>'+
                 '</p>'+
             '</div>'+
         '</div>'+
