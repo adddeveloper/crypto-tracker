@@ -1,0 +1,85 @@
+.containers{
+    width: 1000px;
+}
+
+img{
+    border: 0px;
+    border-radius: 0;
+}
+
+.titlespara {
+    width: 90px;
+}
+
+.namesheader {
+    width: 200px;
+}
+
+span.font-me{
+    font-family: Neucha,sans-serif;
+}
+@media screen and (max-width: 1000px) {
+    .overflow-sm-scroll{
+        overflow: scroll;
+    }   
+}
+
+
+a{
+    text-decoration: none;
+    color: black;
+    font-size: 1rem;
+}
+
+.bg-random-image{
+    overflow-x: hidden !important;
+    width: 100%;
+    height: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url("/style/img/1000.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+}
+
+.img-element{
+    backdrop-filter: blur(4px);
+    color: white;
+    background-color: rgb(48, 140, 245);
+}
+
+.img-right{
+    width: 100%;
+    height: auto;
+    border: solid 1px black;
+}
+
+canvas{
+    border: solid black 1px;
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+}
+::-webkit-scrollbar-button {
+    background: transparent; 
+}
+::-webkit-scrollbar-thumb {
+    border-radius: 20px 10px;
+    background: #333; 
+}
+::-webkit-scrollbar-thumb:hover {
+    background: black; 
+}
+::-webkit-scrollbar-track {
+    background: transparent; 
+}
+::-webkit-scrollbar-corner {
+    background: transparent; 
+}
+::-webkit-resizer {
+    background: transparent; 
+}
