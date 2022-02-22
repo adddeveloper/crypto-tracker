@@ -17,23 +17,39 @@
 </head>
 <body>
     <div class="container-fluid">
-        <div class="container">
+        <div class="container flex-wrap">
             <h1>Crypto Currency Tracker</h1>
+            <div>
+                <p>
+                    This site was built by <a target="_blank" href="https://www.instagram.com/adnanscode">AdnanCodes</a>. contact information listed below, more information can be received at the site listed below.
+                </p>
+                <div class="d-flex flex-row flex-wrap">
+                    <a target="_blank"  class="mx-4" href="mailto:adnanddeveloper@gmail.com">Mail: adnanddeveloper@gmail.com</a>
+                    <a target="_blank"  class="mx-4" href="https://www.adnans.ml/">Website: www.adnans.ml</a>
+                </div>                
+            </div>
         </div>
     </div>
     <div class="holder-in-window shadow d-flex flex-column flex-row flex-wrap overflow-sm-scroll">
         <div class="w-100vw bg-white sticky-top" style="z-index: 2;height:70px;"></div>
         <div class="bg-white sticky-top containers align-items-center d-flex flex-row justify-content-start p-2">
-            <div class="align-items-center d-flex justify-content-center me-5 mx-3 namesheader pe-5">
+            <div class="d-flex flex-nowrap my-auto">
+                <p class="p-1 titlespara">
+                    Rank
+                </p>
+            </div>
+            <div class="align-items-center d-flex justify-content-center me-5 mx-3 namesheader">
                 <p class="me-2" style="font-size: .8rem;">Icon</p>
                 <div class="d-flex flex-column">
                     <span class="font-me p-0 p-0" style="font-size: .8rem;">Acronym</span>
                     <span class="font-me p-0 p-0" style="font-size: 0.8rem;font-weight: bold;">Name</span>
                 </div>
             </div>
-            <p class="mx-5 namesheader p-1">Price USD</p>
+            <p class="namesheader p-1">Price USD</p>
             <div class="d-flex flex-nowrap my-auto">
                 <p class="p-1 titlespara">
+                    Market cap
+                 </p><p class="p-1 titlespara">
                    1h
                 </p><p class="p-1 titlespara">
                    24h
@@ -47,8 +63,17 @@
         </div>
         <hr/>
     </div>
-    <div class="my-2 container-fluid d-flex justify-content-center align-items-center">
+    <div class="my-2 container-fluid d-flex flex-column flex-wrap justify-content-center align-items-center">
         <button class="btn-dark border-light" id="sbutton">load more</button>
+        <div class="my-4">
+            <p>
+                This site uses Coinlore to provide free cryptocurrency data that is available to the public.
+            </p>
+            <div class="d-flex flex-row flex-wrap">
+                <a target="_blank"  class="mx-4" href="mailto:contact@coinlore.com">Mail: contact@coinlore.com</a>
+                <a target="_blank"  class="mx-4" href="https://www.coinlore.com/">Website: www.coinlore.com</a>
+            </div>                
+        </div>
     </div>
     <script src="index.js" type="module"></script>
 </body>

@@ -8,11 +8,12 @@ img{
 }
 
 .titlespara {
-    width: 90px;
+    width: 120px;
+    text-align: center;
 }
 
 .namesheader {
-    width: 200px;
+    width: 100px;
 }
 
 span.font-me{

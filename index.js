@@ -1,8 +1,8 @@
-var url, position, holder, img;
+var url, p1, p2, holder, img;
 img = "https://www.coinlore.com/img/25x25/";
 holder = document.querySelector(".holder-in-window");
-position = [0,30];
-url = "https://api.coinlore.net/api/tickers/?start="+position[0]+"&limit="+position[1];
+p1 = 0;
+url = "https://api.coinlore.net/api/tickers/?start="+p1+"&limit="+"30";
 /*
 csupply: "18945677.00"
 id: "90"
@@ -28,7 +28,8 @@ function again(){
     .then(data=>{
         console.log(data)
         for(var i=0; i<data.data.length; i++){
-            var names, priceOne, symbol, rank; 
+            var names, priceOne, symbol, rank, market_cap; 
+            market_cap = data.data[i].market_cap_usd;
             rank = data.data[i].rank;
             names =data.data[i].name;
             priceOne=data.data[i].price_usd;
@@ -45,7 +46,7 @@ function again(){
             weekly
             volume 24
             */
-            var cup, cdown, color1h, color24h, colorweek, colorvolume;
+            var cup, cdown, color1h, color24h, colorweek;
             cup = '<i class="bi bi-caret-up-fill"></i>';
             cdown = '<i class="bi bi-caret-down-fill"></i>';
             if(change1h < 0){
@@ -54,6 +55,8 @@ function again(){
             } else if(change1h > 0){
                 color1h = "green";
                 change1h = cup+change1h;
+            } else{
+                color1h = "black";
             }
 
             if(change24h < 0){
@@ -62,7 +65,9 @@ function again(){
             } else if(change24h > 0){
                 color24h = "green";
                 change24h = cup+change24h;
-            } 
+            } else{
+                color24h = "black";
+            }
 
             if(changeweek < 0){
                 colorweek = "red";
@@ -70,25 +75,39 @@ function again(){
             } else if(changeweek > 0){
                 colorweek = "green";
                 changeweek = cup+changeweek;
-            } 
+            } else{
+                colorweek = "black";
+            }
             holder.innerHTML +=
             '<div class="containers align-items-center d-flex flex-row justify-content-start p-2">'+
-            '<div class="align-items-center d-flex justify-content-center me-5 mx-3 namesheader pe-5">'+
+            '<div class="align-items-center d-flex flex-nowrap my-auto">'+
+                '<p class="p-1 titlespara">'+
+                    '<span style="color: black;">'+
+                        rank+
+                    '</span>'+
+                '</p>'+
+            '</div>'+
+            '<div class="align-items-center d-flex justify-content-center me-5 mx-3 namesheader">'+
                 '<img style="width: 25px; height: 25px;" src="'+img+data.data[i].nameid+'.png'+'" class="me-2">'+
                 '<div class="d-flex flex-column">'+
                     '<span class="font-me p-0 p-0" style="font-size: 1rem;">'+symbol+'</span>'+
                     '<span class="font-me p-0 p-0" style="font-size: 0.8rem;font-weight: bold;">'+names+'</span>'+
                 '</div>'+
             '</div>'+
-            '<p class="mx-5 namesheader p-1"> <b>$</b>'+priceOne+'</p>'+
+            '<p class="namesheader p-1"> <b>$</b>'+priceOne+'</p>'+
             '<div class="align-items-center d-flex flex-nowrap my-auto">'+
                 '<p class="p-1 titlespara">'+
-                '<span style="color:'+color1h+';">'+
+                    '<span style="color: black;"> <b>$</b>'+
+                        market_cap+
+                    '</span>'+
+                '</p>'+
+                '<p class="p-1 titlespara">'+
+                    '<span style="color:'+color1h+';">'+
                         change1h+
                     '% </span>'+
                 '</p>'+
                 '<p class="p-1 titlespara">'+
-                '<span style="color:'+color24h+';">'+
+                    '<span style="color:'+color24h+';">'+
                         change24h+
                     '% </span>'+
                 '</p>'+
@@ -111,7 +130,8 @@ function again(){
 
 var sbutton = document.getElementById("sbutton");
 sbutton.addEventListener("click", ()=>{
-    position[0]+=position[1];
-    console.log(position)
+    p1 += 30;
+    url = "https://api.coinlore.net/api/tickers/?start="+p1+"&limit="+"30";
+    console.log(p1, url)
     again()
 })
