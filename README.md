@@ -1,4 +1,4 @@
-# Note Taking Website
+# Cryptocurrency Tracker
 
 Visit the (website)[https://cctracker.netlify.app].
 
